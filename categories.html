@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Categories – La Imperial</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-logo"><span class="brand-l">L</span><span class="brand-i">I</span></div>
+    </div>
+  </div>
+
+  <canvas id="particleCanvas"></canvas>
+
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-box"><i class="fas fa-bolt"></i><span>La <strong>Imperial</strong></span></div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="brands.html">Brands</a></li>
+        <li><a href="categories.html" class="active">Categories</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-search" id="searchToggle"><i class="fas fa-search"></i></button>
+        <a href="contact.html" class="btn-cta">Get a Quote</a>
+        <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+    <div class="search-bar" id="searchBar">
+      <div class="search-inner">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search appliances…" id="searchInput" />
+        <button id="searchClose"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>›</span><span>Categories</span>
+    </div>
+    <h1>Shop by <span class="gradient-text">Category</span></h1>
+    <p>Browse our wide selection of home appliances, organized by category for your convenience.</p>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Category Cards -->
+      <div class="categories-detail-grid reveal" id="catDetailGrid">
+        <!-- rendered by JS -->
+      </div>
+
+      <!-- Products by Category -->
+      <div id="catProductsSection" style="margin-top:4rem;display:none;">
+        <div class="section-header">
+          <div class="section-tag" id="selectedCatTag"></div>
+          <h2 class="section-title" id="selectedCatTitle"></h2>
+        </div>
+
+        <!-- Brand sub-filter -->
+        <div class="brand-filter-bar" id="catBrandFilter" style="margin-bottom:2rem;"></div>
+
+        <div class="products-grid" id="catProductsGrid"></div>
+        <div class="text-center">
+          <a href="products.html" class="btn-secondary"><i class="fas fa-th"></i> View All Products</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col footer-brand">
+            <div class="nav-logo"><div class="logo-box"><i class="fas fa-bolt"></i><span>La <strong>Imperial</strong></span></div></div>
+            <p>Pakistan's trusted name in premium home appliances for over 20 years.</p>
+            <div class="footer-socials">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="brands.html">Brands</a></li>
+              <li><a href="categories.html">Categories</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="categories.html?cat=refrigerator">Refrigerators</a></li>
+              <li><a href="categories.html?cat=washer">Washers & Dryers</a></li>
+              <li><a href="categories.html?cat=ac">Air Conditioners</a></li>
+              <li><a href="categories.html?cat=tv">Televisions</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact Info</h4>
+            <div class="footer-contact">
+              <p><i class="fas fa-map-marker-alt"></i> Shop No. 45, Main Boulevard, Gulberg III, Lahore</p>
+              <p><i class="fas fa-phone"></i> +92-42-1234567</p>
+              <p><i class="fas fa-envelope"></i> <a href="mailto:info@laimperial.com">info@laimperial.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container"><p>© 2024 La Imperial. All Rights Reserved.</p></div></div>
+  </footer>
+
+  <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+  <script src="categories.js"></script>
+</body>
+</html>

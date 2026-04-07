@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products – La Imperial</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <style>
+    .products-sidebar {
+      width: 280px; flex-shrink: 0;
+    }
+    .sidebar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .sidebar-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .sidebar-card h4 i { color: var(--primary); }
+    .sidebar-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .sidebar-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 8px; cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.88rem; color: var(--text-muted);
+      border: 1px solid transparent;
+    }
+    .sidebar-item:hover, .sidebar-item.active { background: rgba(230,57,70,0.1); border-color: rgba(230,57,70,0.2); color: white; }
+    .sidebar-item .item-count { margin-left: auto; background: rgba(255,255,255,0.05); padding: 0.1rem 0.5rem; border-radius: 100px; font-size: 0.75rem; }
+    .products-layout { display: flex; gap: 2rem; align-items: flex-start; }
+    .products-main { flex: 1; min-width: 0; }
+    .products-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
+    .products-count { color: var(--text-muted); font-size: 0.9rem; }
+    .products-sort {
+      display: flex; align-items: center; gap: 0.75rem; font-size: 0.88rem;
+    }
+    .products-sort select {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.5rem 1rem;
+      color: white; font-family: inherit; outline: none; cursor: pointer;
+    }
+    .search-products {
+      width: 100%;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 1.1rem;
+      color: white; font-family: inherit; font-size: 0.9rem;
+      outline: none; transition: var(--transition);
+      margin-bottom: 1.5rem;
+    }
+    .search-products:focus { border-color: var(--primary); }
+    .price-range { margin-top: 0.75rem; }
+    .price-inputs { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
+    .price-inputs input {
+      flex: 1; background: var(--bg-card2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.5rem 0.75rem;
+      color: white; font-family: inherit; font-size: 0.85rem; outline: none;
+    }
+    .no-products {
+      text-align: center; padding: 4rem;
+      color: var(--text-muted);
+    }
+    .no-products i { font-size: 3rem; margin-bottom: 1rem; display: block; }
+    @media (max-width: 900px) { .products-sidebar { display: none; } }
+  </style>
+</head>
+<body>
+
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-logo"><span class="brand-l">L</span><span class="brand-i">I</span></div>
+    </div>
+  </div>
+
+  <canvas id="particleCanvas"></canvas>
+
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-box"><i class="fas fa-bolt"></i><span>La <strong>Imperial</strong></span></div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="brands.html">Brands</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-search" id="searchToggle"><i class="fas fa-search"></i></button>
+        <a href="contact.html" class="btn-cta">Get a Quote</a>
+        <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+    <div class="search-bar" id="searchBar">
+      <div class="search-inner">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search appliances…" id="searchInput" />
+        <button id="searchClose"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>›</span><span>Products</span>
+    </div>
+    <h1>All <span class="gradient-text">Products</span></h1>
+    <p>Explore our full catalog of premium home appliances from top international and local brands.</p>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="products-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="products-sidebar">
+
+          <div class="sidebar-card">
+            <h4><i class="fas fa-filter"></i> Filter by Brand</h4>
+            <div class="sidebar-list" id="brandSidebar"></div>
+          </div>
+
+          <div class="sidebar-card">
+            <h4><i class="fas fa-th-list"></i> Filter by Category</h4>
+            <div class="sidebar-list" id="catSidebar"></div>
+          </div>
+
+          <div class="sidebar-card">
+            <h4><i class="fas fa-tag"></i> Price Range</h4>
+            <div class="price-range">
+              <p style="color:var(--text-muted);font-size:0.85rem">PKR <span id="priceDisplay">0 – 500,000</span></p>
+              <div class="price-inputs">
+                <input type="number" id="priceMin" placeholder="Min" value="0" />
+                <input type="number" id="priceMax" placeholder="Max" value="500000" />
+              </div>
+              <button class="btn-primary" style="width:100%;margin-top:0.75rem;font-size:0.85rem;justify-content:center;" onclick="applyFilters()">
+                Apply Filter
+              </button>
+            </div>
+          </div>
+
+          <button class="btn-secondary" style="width:100%;justify-content:center;" onclick="clearAllFilters()">
+            <i class="fas fa-times"></i> Clear All Filters
+          </button>
+        </aside>
+
+        <!-- MAIN -->
+        <div class="products-main">
+          <input type="text" class="search-products reveal" id="productSearch" placeholder="🔍  Search products by name, brand, or model…" />
+
+          <div class="products-header">
+            <div class="products-count reveal" id="productsCount">Showing all products</div>
+            <div class="products-sort reveal">
+              <span style="color:var(--text-muted)">Sort by:</span>
+              <select id="sortSelect" onchange="applyFilters()">
+                <option value="default">Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Top Rated</option>
+                <option value="name">Name A–Z</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="products-grid" id="productsPageGrid"></div>
+
+          <!-- Compare Bar -->
+          <div id="compareBar" style="position:fixed;bottom:0;left:0;right:0;background:var(--bg-card);border-top:1px solid var(--border);padding:1rem 2rem;display:none;z-index:500;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
+            <span style="font-weight:600;"><i class="fas fa-balance-scale" style="color:var(--primary)"></i> Compare Products:</span>
+            <span id="compareBarItems" style="color:var(--text-muted);font-size:0.9rem;"></span>
+            <a href="compare.html" class="btn-primary" style="font-size:0.85rem;padding:0.5rem 1.2rem;">
+              <i class="fas fa-balance-scale"></i> Go to Compare
+            </a>
+            <button class="btn-secondary" style="font-size:0.85rem;padding:0.5rem 1.2rem;" onclick="clearCompare()">
+              <i class="fas fa-times"></i> Clear
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col footer-brand">
+            <div class="nav-logo"><div class="logo-box"><i class="fas fa-bolt"></i><span>La <strong>Imperial</strong></span></div></div>
+            <p>Pakistan's trusted name in premium home appliances for over 20 years.</p>
+            <div class="footer-socials">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="brands.html">Brands</a></li>
+              <li><a href="categories.html">Categories</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="categories.html?cat=refrigerator">Refrigerators</a></li>
+              <li><a href="categories.html?cat=washer">Washers & Dryers</a></li>
+              <li><a href="categories.html?cat=ac">Air Conditioners</a></li>
+              <li><a href="categories.html?cat=tv">Televisions</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact Info</h4>
+            <div class="footer-contact">
+              <p><i class="fas fa-map-marker-alt"></i> Shop No. 45, Main Boulevard, Gulberg III, Lahore</p>
+              <p><i class="fas fa-phone"></i> +92-42-1234567</p>
+              <p><i class="fas fa-envelope"></i> <a href="mailto:info@laimperial.com">info@laimperial.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container"><p>© 2024 La Imperial. All Rights Reserved.</p></div></div>
+  </footer>
+
+  <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+  <script src="products.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+This folder contains product specification PDF documents.
+Files are named according to the product model, e.g.:
+- Haier_HRF368_Features.pdf
+- Samsung_RF28R7551SR_Features.pdf
+- LG_LRFXS2503S_Features.pdf
+etc.
+
+In a real deployment, these PDF files would contain detailed product specifications.

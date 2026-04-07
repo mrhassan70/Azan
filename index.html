@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Imperial – Premium Home Appliances</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-logo">
+        <span class="brand-l">L</span><span class="brand-i">I</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARTICLE CANVAS -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-box">
+          <i class="fas fa-bolt"></i>
+          <span>La <strong>Imperial</strong></span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="brands.html">Brands</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-search" id="searchToggle"><i class="fas fa-search"></i></button>
+        <a href="contact.html" class="btn-cta">Get a Quote</a>
+        <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar" id="searchBar">
+      <div class="search-inner">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search appliances, brands, categories…" id="searchInput" />
+        <button id="searchClose"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero">
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-3d-scene">
+      <div class="floating-card card-1">
+        <i class="fas fa-snowflake"></i>
+        <span>Refrigerators</span>
+      </div>
+      <div class="floating-card card-2">
+        <i class="fas fa-wind"></i>
+        <span>AC Units</span>
+      </div>
+      <div class="floating-card card-3">
+        <i class="fas fa-tshirt"></i>
+        <span>Washers</span>
+      </div>
+      <div class="floating-card card-4">
+        <i class="fas fa-fire"></i>
+        <span>Ovens</span>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge animate-fade-up">🏆 20 Years of Excellence</div>
+      <h1 class="hero-title animate-fade-up delay-1">
+        Premium Home<br /><span class="gradient-text">Appliances</span>
+      </h1>
+      <p class="hero-subtitle animate-fade-up delay-2">
+        Discover the world's finest appliances at La Imperial — Where quality meets innovation. 
+        Explore top brands like Haier, Samsung, LG, and more.
+      </p>
+      <div class="hero-buttons animate-fade-up delay-3">
+        <a href="products.html" class="btn-primary">
+          <i class="fas fa-th-large"></i> Browse Products
+        </a>
+        <a href="brands.html" class="btn-secondary">
+          <i class="fas fa-star"></i> View Brands
+        </a>
+      </div>
+
+      <div class="hero-stats animate-fade-up delay-4">
+        <div class="stat">
+          <span class="stat-num" data-count="500">0</span><span>+</span>
+          <small>Products</small>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="20">0</span><span>+</span>
+          <small>Years</small>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="15">0</span><span>+</span>
+          <small>Brands</small>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="10000">0</span><span>+</span>
+          <small>Customers</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ===== TICKER ===== -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span>🏠 Haier</span><span>📱 Samsung</span><span>⚡ LG</span>
+      <span>🔥 Whirlpool</span><span>❄️ Dawlance</span><span>🌟 PEL</span>
+      <span>💎 Orient</span><span>🏆 Gree</span><span>✨ Kenwood</span>
+      <span>🏠 Haier</span><span>📱 Samsung</span><span>⚡ LG</span>
+      <span>🔥 Whirlpool</span><span>❄️ Dawlance</span><span>🌟 PEL</span>
+      <span>💎 Orient</span><span>🏆 Gree</span><span>✨ Kenwood</span>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT STRIP ===== -->
+  <section id="about-strip" class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal">
+          <div class="about-3d-frame">
+            <div class="about-img-inner">
+              <img src="https://sspark.genspark.ai/cfimages?u1=Of0fKZH%2F2kWFJSqyDr8Us5uZU4UAKnZ9sjHkVMGmclxKWyhmgzh3wMDwv3TsQYRqBuaKX6plr%2FQcMtYysUkka%2FhiM46Y3MKFhZ1vB5FockL6xkA%2BPH3VvwvYd6uOo3cwT8A%3D&u2=DNMeOuxpuNmS6Egk&width=2560" alt="La Imperial Showroom" />
+            </div>
+            <div class="about-badge-float">
+              <i class="fas fa-award"></i>
+              <div>
+                <strong>Certified</strong>
+                <small>Authorized Dealer</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text reveal delay-1">
+          <div class="section-tag">About Us</div>
+          <h2 class="section-title">Trusted for <span class="gradient-text">20 Years</span> of Excellence</h2>
+          <p>La Imperial has been the region's most trusted name in home appliances since 2004. We bring you the finest brands from around the world with unmatched service and competitive pricing.</p>
+          <p>Our expert team is always ready to help you find the perfect appliance that fits your lifestyle and budget.</p>
+          <div class="about-features">
+            <div class="about-feat"><i class="fas fa-check-circle"></i> Genuine Branded Products</div>
+            <div class="about-feat"><i class="fas fa-check-circle"></i> After-Sales Support</div>
+            <div class="about-feat"><i class="fas fa-check-circle"></i> Easy Installment Plans</div>
+            <div class="about-feat"><i class="fas fa-check-circle"></i> Free Home Delivery</div>
+          </div>
+          <a href="contact.html" class="btn-primary">Visit Our Store <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BRANDS SECTION ===== -->
+  <section id="brands-home" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Our Brands</div>
+        <h2 class="section-title">Top Brands We Carry</h2>
+        <p>Filter by your favorite brand and explore our wide range of premium appliances</p>
+      </div>
+
+      <div class="brands-grid reveal delay-1">
+        <a href="brands.html?brand=haier" class="brand-card">
+          <div class="brand-icon brand-haier">H</div>
+          <span>Haier</span>
+          <small>40+ Products</small>
+        </a>
+        <a href="brands.html?brand=samsung" class="brand-card">
+          <div class="brand-icon brand-samsung">S</div>
+          <span>Samsung</span>
+          <small>35+ Products</small>
+        </a>
+        <a href="brands.html?brand=lg" class="brand-card">
+          <div class="brand-icon brand-lg">LG</div>
+          <span>LG</span>
+          <small>30+ Products</small>
+        </a>
+        <a href="brands.html?brand=whirlpool" class="brand-card">
+          <div class="brand-icon brand-whirlpool">W</div>
+          <span>Whirlpool</span>
+          <small>25+ Products</small>
+        </a>
+        <a href="brands.html?brand=dawlance" class="brand-card">
+          <div class="brand-icon brand-dawlance">D</div>
+          <span>Dawlance</span>
+          <small>45+ Products</small>
+        </a>
+        <a href="brands.html?brand=pel" class="brand-card">
+          <div class="brand-icon brand-pel">P</div>
+          <span>PEL</span>
+          <small>20+ Products</small>
+        </a>
+        <a href="brands.html?brand=orient" class="brand-card">
+          <div class="brand-icon brand-orient">O</div>
+          <span>Orient</span>
+          <small>28+ Products</small>
+        </a>
+        <a href="brands.html?brand=gree" class="brand-card">
+          <div class="brand-icon brand-gree">G</div>
+          <span>Gree</span>
+          <small>22+ Products</small>
+        </a>
+      </div>
+
+      <div class="text-center reveal delay-2">
+        <a href="brands.html" class="btn-primary">View All Brands <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORIES SECTION ===== -->
+  <section id="categories-home" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Shop By Category</div>
+        <h2 class="section-title">Browse Our <span class="gradient-text">Categories</span></h2>
+        <p>Find the perfect appliance for every room in your home</p>
+      </div>
+
+      <div class="categories-grid reveal delay-1">
+        <a href="categories.html?cat=refrigerators" class="cat-card cat-1">
+          <div class="cat-icon"><i class="fas fa-snowflake"></i></div>
+          <div class="cat-content">
+            <h3>Refrigerators</h3>
+            <p>French Door, Side-by-Side, Top Freezer & more</p>
+          </div>
+          <div class="cat-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="cat-bg-number">01</div>
+        </a>
+        <a href="categories.html?cat=washers" class="cat-card cat-2">
+          <div class="cat-icon"><i class="fas fa-tshirt"></i></div>
+          <div class="cat-content">
+            <h3>Washers & Dryers</h3>
+            <p>Front Load, Top Load & Dryer combos</p>
+          </div>
+          <div class="cat-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="cat-bg-number">02</div>
+        </a>
+        <a href="categories.html?cat=ac" class="cat-card cat-3">
+          <div class="cat-icon"><i class="fas fa-wind"></i></div>
+          <div class="cat-content">
+            <h3>Air Conditioners</h3>
+            <p>Split, Window, Portable & Inverter ACs</p>
+          </div>
+          <div class="cat-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="cat-bg-number">03</div>
+        </a>
+        <a href="categories.html?cat=microwaves" class="cat-card cat-4">
+          <div class="cat-icon"><i class="fas fa-broadcast-tower"></i></div>
+          <div class="cat-content">
+            <h3>Microwaves & Ovens</h3>
+            <p>Microwave, Convection & Built-in Ovens</p>
+          </div>
+          <div class="cat-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="cat-bg-number">04</div>
+        </a>
+        <a href="categories.html?cat=tv" class="cat-card cat-5">
+          <div class="cat-icon"><i class="fas fa-tv"></i></div>
+          <div class="cat-content">
+            <h3>Televisions</h3>
+            <p>OLED, QLED, Smart TVs & more</p>
+          </div>
+          <div class="cat-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="cat-bg-number">05</div>
+        </a>
+        <a href="categories.html?cat=dishwashers" class="cat-card cat-6">
+          <div class="cat-icon"><i class="fas fa-sink"></i></div>
+          <div class="cat-content">
+            <h3>Dishwashers</h3>
+            <p>Built-in, Portable & Countertop Dishwashers</p>
+          </div>
+          <div class="cat-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="cat-bg-number">06</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED PRODUCTS ===== -->
+  <section id="featured-products" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Featured Products</div>
+        <h2 class="section-title">Our <span class="gradient-text">Best Sellers</span></h2>
+        <p>Hand-picked by our experts for quality, value, and performance</p>
+      </div>
+
+      <div class="products-filter reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="refrigerator">Refrigerators</button>
+        <button class="filter-btn" data-filter="washer">Washers</button>
+        <button class="filter-btn" data-filter="ac">AC Units</button>
+        <button class="filter-btn" data-filter="tv">Televisions</button>
+      </div>
+
+      <div class="products-grid" id="featuredGrid">
+        <!-- Products rendered by JS -->
+      </div>
+
+      <div class="text-center reveal delay-2">
+        <a href="products.html" class="btn-primary">View All Products <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section id="why-us" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Why Choose Us</div>
+        <h2 class="section-title">The <span class="gradient-text">La Imperial</span> Advantage</h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card reveal delay-1">
+          <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Official Warranty</h3>
+          <p>All products come with official manufacturer warranty for your complete peace of mind.</p>
+        </div>
+        <div class="why-card reveal delay-2">
+          <div class="why-icon"><i class="fas fa-truck"></i></div>
+          <h3>Free Delivery</h3>
+          <p>Enjoy free home delivery on all orders within the city. Fast and reliable service.</p>
+        </div>
+        <div class="why-card reveal delay-3">
+          <div class="why-icon"><i class="fas fa-tools"></i></div>
+          <h3>Expert Installation</h3>
+          <p>Professional installation by certified technicians included with purchase.</p>
+        </div>
+        <div class="why-card reveal delay-4">
+          <div class="why-icon"><i class="fas fa-headset"></i></div>
+          <h3>24/7 Support</h3>
+          <p>Our customer support team is always available to help you with any queries.</p>
+        </div>
+        <div class="why-card reveal delay-1">
+          <div class="why-icon"><i class="fas fa-credit-card"></i></div>
+          <h3>Easy Installments</h3>
+          <p>0% markup installment plans available on all major appliances with partner banks.</p>
+        </div>
+        <div class="why-card reveal delay-2">
+          <div class="why-icon"><i class="fas fa-exchange-alt"></i></div>
+          <h3>Easy Returns</h3>
+          <p>Hassle-free return and exchange policy within 7 days of purchase.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials" class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Testimonials</div>
+        <h2 class="section-title">What Our <span class="gradient-text">Customers Say</span></h2>
+      </div>
+
+      <div class="testimonials-carousel" id="testimonialCarousel">
+        <div class="testimonial-card active reveal">
+          <div class="t-stars">⭐⭐⭐⭐⭐</div>
+          <p>"La Imperial has been my go-to store for all my home appliances. Their service is exceptional and the prices are unbeatable. Highly recommended!"</p>
+          <div class="t-author">
+            <div class="t-avatar">AK</div>
+            <div>
+              <strong>Ahmed Khan</strong>
+              <small>Karachi</small>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal delay-1">
+          <div class="t-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Bought a Haier refrigerator and LG washing machine from them. Both are working perfectly. The team helped me compare products and choose the best one."</p>
+          <div class="t-author">
+            <div class="t-avatar">SF</div>
+            <div>
+              <strong>Sara Fatima</strong>
+              <small>Lahore</small>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal delay-2">
+          <div class="t-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Amazing experience! Free delivery and installation made everything so convenient. The Samsung AC they recommended is working great in this summer heat."</p>
+          <div class="t-author">
+            <div class="t-avatar">MR</div>
+            <div>
+              <strong>Muhammad Raza</strong>
+              <small>Islamabad</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-dots" id="carouselDots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section id="cta-section" class="section">
+    <div class="cta-container reveal">
+      <div class="cta-content">
+        <h2>Ready to Upgrade Your Home?</h2>
+        <p>Visit La Imperial today or contact us for expert advice on your next appliance purchase.</p>
+        <div class="cta-buttons">
+          <a href="products.html" class="btn-primary">
+            <i class="fas fa-shopping-bag"></i> Shop Now
+          </a>
+          <a href="contact.html" class="btn-secondary">
+            <i class="fas fa-phone"></i> Call Us
+          </a>
+        </div>
+      </div>
+      <div class="cta-icon-wrap">
+        <i class="fas fa-home"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col footer-brand">
+            <div class="nav-logo">
+              <div class="logo-box">
+                <i class="fas fa-bolt"></i>
+                <span>La <strong>Imperial</strong></span>
+              </div>
+            </div>
+            <p>Pakistan's trusted name in premium home appliances for over 20 years. Quality you can trust, prices you'll love.</p>
+            <div class="footer-socials">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="brands.html">Brands</a></li>
+              <li><a href="categories.html">Categories</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="compare.html">Compare</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Top Brands</h4>
+            <ul>
+              <li><a href="brands.html?brand=haier">Haier</a></li>
+              <li><a href="brands.html?brand=samsung">Samsung</a></li>
+              <li><a href="brands.html?brand=lg">LG</a></li>
+              <li><a href="brands.html?brand=dawlance">Dawlance</a></li>
+              <li><a href="brands.html?brand=pel">PEL</a></li>
+              <li><a href="brands.html?brand=gree">Gree</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact Info</h4>
+            <div class="footer-contact">
+              <p><i class="fas fa-map-marker-alt"></i> Shop No. 45, Main Boulevard, Gulberg III, Lahore, Pakistan</p>
+              <p><i class="fas fa-phone"></i> +92-42-1234567</p>
+              <p><i class="fas fa-mobile-alt"></i> +92-300-1234567</p>
+              <p><i class="fas fa-envelope"></i> <a href="mailto:info@laimperial.com">info@laimperial.com</a></p>
+              <p><i class="fas fa-clock"></i> Mon–Sat: 9:00 AM – 9:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2024 La Imperial. All Rights Reserved. | Designed with ❤️ for our valued customers</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
